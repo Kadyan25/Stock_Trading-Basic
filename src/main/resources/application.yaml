@@ -1,0 +1,22 @@
+alpha:
+  vantage:
+    api-key: COZEWV4SVJ7GMNDZ
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: trading
+  datasource:
+    url: jdbc:mysql://localhost:3306/stock_trading?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect

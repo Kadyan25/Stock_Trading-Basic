@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Tables: global */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 6px 8px;
+}
+
+/* App layout */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: #0d47a1;
+    color: #fff;
+}
+
+.app-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* responsive */
+}
+
+.sidebar {
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.main {
+    flex: 3 1 500px;
+    padding: 10px;
+    max-width: 1000px;       /* keeps content from stretching too wide */
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .app-content {
+        flex-direction: column;
+    }
+    .sidebar {
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+/* Cards (Stocks, Trade, Portfolio, etc.) */
+.card {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+}
+
+/* Put a bit more gap between Stocks and Trade */
+.card + .card {
+    margin-top: 16px;
+}
+
+/* Buttons inside cards */
+.card > button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Stocks table-specific tweaks */
+.stocks-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;      /* consistent column widths */
+}
+
+.stocks-table th,
+.stocks-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+}
+
+.stocks-table thead th {
+    border-bottom: 2px solid #ccc;
+}
+
+/* Right-align numeric columns (Simulated Price, Last Real Price) */
+.stocks-table td:nth-child(3),
+.stocks-table td:nth-child(4),
+.stocks-table th:nth-child(3),
+.stocks-table th:nth-child(4) {
+    text-align: right;
+}
+
+/* Portfolio cards */
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.portfolio-item {
+    flex: 1 1 150px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #f5f5f5;
+}
+
+/* Trade form layout */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.form-row label {
+    width: 90px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-actions {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-actions button {
+    padding: 6px 12px;
+}
